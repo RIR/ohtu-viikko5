@@ -12,20 +12,20 @@ public class IntJoukkoTest {
     @Before
     public void setUp() {
         joukko = new IntJoukko();
-        joukko.lisaaLuku(10);
-        joukko.lisaaLuku(3);
+        joukko.lisaa(10);
+        joukko.lisaa(3);
     }
 
     @Test
     public void lukujaLisattyMaara() {
-        joukko.lisaaLuku(4);
+        joukko.lisaa(4);
         assertEquals(3, joukko.mahtavuus());
     }
 
     @Test
     public void samaLukuMeneeJoukkoonVaanKerran() {
-        joukko.lisaaLuku(10);
-        joukko.lisaaLuku(3);
+        joukko.lisaa(10);
+        joukko.lisaa(3);
         assertEquals(2, joukko.mahtavuus());
     }
 
@@ -47,9 +47,9 @@ public class IntJoukkoTest {
     public void palautetaanOikeaTaulukko() {
         int[] odotettu = {3, 55, 99};
         
-        joukko.lisaaLuku(55);
+        joukko.lisaa(55);
         joukko.poista(10);
-        joukko.lisaaLuku(99);
+        joukko.lisaa(99);
 
         int[] vastaus = joukko.getLukujoukko();
         Arrays.sort(vastaus);
@@ -61,7 +61,7 @@ public class IntJoukkoTest {
     public void toimiiKasvatuksenJalkeen(){
         int[] lisattavat = {1,2,4,5,6,7,8,9,11,12,13,14};
         for (int luku : lisattavat) {
-            joukko.lisaaLuku(luku);
+            joukko.lisaa(luku);
         }
         assertEquals(14, joukko.mahtavuus());
         assertTrue(joukko.kuuluuLukujoukkoon(11));
@@ -78,7 +78,7 @@ public class IntJoukkoTest {
     @Test
     public void toStringToimiiYhdenKokoiselleJoukolla(){
         joukko = new IntJoukko();
-        joukko.lisaaLuku(1);
+        joukko.lisaa(1);
         assertEquals("{1}", joukko.toString());
     }
 

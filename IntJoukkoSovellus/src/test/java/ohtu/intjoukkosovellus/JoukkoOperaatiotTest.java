@@ -27,7 +27,7 @@ public class JoukkoOperaatiotTest {
         IntJoukko joukko = new IntJoukko();
         
         for (int luku : luvut) {
-            joukko.lisaaLuku(luku);
+            joukko.lisaa(luku);
         }
         
         return joukko;
