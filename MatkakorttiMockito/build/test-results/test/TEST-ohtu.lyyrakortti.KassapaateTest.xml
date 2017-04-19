@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.lyyrakortti.KassapaateTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-04-19T11:11:13" hostname="dhcp-asv-103" time="0.715">
+  <properties/>
+  <testcase name="kortiltaVelotetaanHintaJosRahaaOn" classname="ohtu.lyyrakortti.KassapaateTest" time="0.706"/>
+  <testcase name="kortilleLadataanJosSummaPositiivinen" classname="ohtu.lyyrakortti.KassapaateTest" time="0.002"/>
+  <testcase name="kortilleEiLadataJosSummaEiPositiivinen" classname="ohtu.lyyrakortti.KassapaateTest" time="0.002"/>
+  <testcase name="kortiltaEiVelotetaJosRahaEiRiita" classname="ohtu.lyyrakortti.KassapaateTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
