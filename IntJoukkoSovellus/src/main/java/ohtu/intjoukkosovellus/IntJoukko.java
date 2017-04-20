@@ -5,11 +5,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /*
-Luokassa mielestäni vieläkin paljon koodihajua, mutta tein refaktorointia tehtävänannon mukaan, enkä puuttunut muihin luokkiin. Metodeja on nyt 
-luokassa todella paljon. Koodin sisennys on Netbeansin automaattista sisennystä
-enkä ole sitä tiivistänyt "säästääkseeni" rivejä. En havainnut miksi lisää ja poista metodit ovat 
-booleaneja,mutta en viitsinyt muuttaa palautustyyppejä, kun en tiennyt saiko niin tehdä. 
-
 Taulukkometodit irtoaisivat varmaankin suht siististi omaan luokkaansa, mutta taaskaan en ollut oikein
 varma kuuluuko tehtävänantoon.
  */
@@ -114,23 +109,13 @@ public class IntJoukko {
 
     public static IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
         IntJoukko leikkaus = new IntJoukko();
-
-        for (int i : a.getLukujoukko()) {
-            if (b.kuuluuLukujoukkoon(i)) {
-                leikkaus.lisaa(i);
-            }
-        }
+        Arrays.stream(a.getLukujoukko()).boxed().filter(i -> b.kuuluuLukujoukkoon(i)).forEach(i-> leikkaus.lisaa(i));
         return leikkaus;
     }
 
     public static IntJoukko erotus(IntJoukko a, IntJoukko b) {
         IntJoukko erotus = new IntJoukko();
-
-        for (int i : a.getLukujoukko()) {
-            if (!b.kuuluuLukujoukkoon(i)) {
-                erotus.lisaa(i);
-            }
-        }
+        Arrays.stream(a.getLukujoukko()).boxed().filter(i -> !b.kuuluuLukujoukkoon(i)).forEach(i-> erotus.lisaa(i));
         return erotus;
     }
 
